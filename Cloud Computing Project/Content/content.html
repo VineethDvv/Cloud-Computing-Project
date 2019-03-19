@@ -1,0 +1,93 @@
+<html>
+<head>
+    <link rel="stylesheet" href="Content.css">
+    <!-- Bootstrap CDN Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Content.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FireBase Repository -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script src="Content.js"></script>
+    <script src="Content1.js"></script>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<style>
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        background-image: url("bgg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+</style>
+<body ng-app="contentApp" ng-controller="contentController" onload="openSearch()">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">HealthCare Content Data Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="../ProfileInfo/profile_info.html"><span class="glyphicon glyphicon-user"></span> Profile Info</a></li>
+            <li><a href="../Home/HomePage.html">Home</a></li>
+            <li class="active"><a href="../Content/Content.html">Show Restaurants NearBy</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+            <div class="search-bar">
+                <input type="text" name="search" value="" autocomplete="off" id="myinput" ng-keyup="searchFunction()" placeholder="Enter the ZIP Code">
+
+            </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="../ContactInfo/Contact_us.html">Contact Us</a></li>
+            <li><a href="../ContactInfo/HCDMS.html"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div ng-bind-html="myHTML" id="myHTML">
+</div>
+
+
+
+<div id="myOverlay" class="overlay">
+    <span class="closebtn" onclick="closeSearch()" title="Close Overlay">Close</span>
+    <div class="overlay-content">
+        <form action="/action_page.php">
+            <input id="zipcode" type="text" placeholder="Enter The ZIP Code.." name="search">
+            <button type="submit" onclick="method()"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
+Name:<script>document.write(document.getElementById('zipcode').value);</script>
+
+
+
+
+<script>
+    function method() {
+        alert("Hello")
+
+    }
+
+    function openSearch(){
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeSearch(){
+        document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+</body>
+</html>
