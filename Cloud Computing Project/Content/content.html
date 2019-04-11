@@ -13,6 +13,31 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src="Content.js"></script>
     <script src="Content1.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="../css/all.css">
+    <title>Grocery Item</title>
+    <style>
+    </style>
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+
+    </style>
+
+
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,21 +61,17 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">HealthCare Content Data Management System</a>
+            <font size="8" color="white">BEST RESTAURENTS</font>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="../ProfileInfo/profile_info.html"><span class="glyphicon glyphicon-user"></span> Profile Info</a></li>
             <li><a href="../Home/HomePage.html">Home</a></li>
             <li class="active"><a href="../Content/Content.html">Show Restaurants NearBy</a></li>
         </ul>
         <form class="navbar-form navbar-left">
-            <div class="search-bar">
-                <input type="text" name="search" value="" autocomplete="off" id="myinput" ng-keyup="searchFunction()" placeholder="Enter the ZIP Code">
 
-            </div>
         </form>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="../ContactInfo/Contact_us.html">Contact Us</a></li>
+            <li><a href="../ContactInfo/Contact_us.html" >Contact Us</a></li>
             <li><a href="../ContactInfo/HCDMS.html"><span class="glyphicon glyphicon glyphicon-off"></span> Logout</a></li>
         </ul>
     </div>
@@ -60,7 +81,7 @@
 
 
 
-<div id="myOverlay" class="overlay">
+<!--<div id="myOverlay" class="overlay">
     <span class="closebtn" onclick="closeSearch()" title="Close Overlay">Close</span>
     <div class="overlay-content">
         <form action="/action_page.php">
@@ -68,9 +89,7 @@
             <button type="submit" onclick="method()"><i class="fa fa-search"></i></button>
         </form>
     </div>
-</div>
-
-Name:<script>document.write(document.getElementById('zipcode').value);</script>
+</div>-->
 
 
 
@@ -89,5 +108,103 @@ Name:<script>document.write(document.getElementById('zipcode').value);</script>
         document.getElementById("myOverlay").style.display = "none";
     }
 </script>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="feedback alert alert-danger text-center text-capitalize">please enter city</div>
+            <form id="searchForm" class="my-4">
+                <!-- form group -->
+                <div class="form-group my-3">
+                    <select class="custom-select text-capitalize" id="searchCategory">
+
+
+                    </select>
+                </div>
+                <!-- end of form group -->
+
+                <!-- input group -->
+                <div class="input-group">
+                    <input type="text" class="form-control text-capitalize" id="searchCity" placeholder="enter city....">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn redBtn text-capitalize">search</button>
+                    </div>
+                </div>
+                <!-- input group -->
+
+
+            </form>
+
+            <img src="img/loader.gif" class="loader" alt="">
+        </div>
+    </div>
+</div>
+<!-- restaurant section -->
+
+<section class="py-5">
+    <div class="container">
+        <div class="row" id="restaurant-list">
+            <!-- item -->
+            <div class="col-11 mx-auto my-3">
+                <div class="card">
+                    <div class="card">
+                        <div class="row p-3">
+                            <div class="col-5">
+                                <img src="img/food.jpeg" class="img-fluid img-thumbnail" alt="">
+                            </div>
+                            <div class="col-5 text-capitalize">
+                                <h6 class="text-uppercase pt-2 redText">name</h6>
+                                <p>address</p>
+                            </div>
+                            <div class="col-1">
+                                <div class="badge badge-success">
+                                    4.9
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row py-3 ml-1">
+                            <div class="col-5 text-uppercase ">
+                                <p>cousines :</p>
+                                <p>cost for two :</p>
+                            </div>
+                            <div class="col-7 text-uppercase">
+                                <p>cousines</p>
+                                <p>cost</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row text-center no-gutters pb-3">
+                            <div class="col-6">
+                                <a href="#" target="_blank" class="btn redBtn  text-uppercase"><i class="fas fa-book"></i> menu</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" target="_blank" class="btn redBtn  text-uppercase"><i class="fas fa-book"></i> website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- item -->
+
+            </div>
+        </div>
+</section>
+
+
+
+
+<!-- jquery -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<!-- bootstrap js -->
+<script src="../js/bootstrap.bundle.min.js"></script>
+<!-- script js -->
+<script src="../js/app.js"></script>
+
+
+
 </body>
 </html>
